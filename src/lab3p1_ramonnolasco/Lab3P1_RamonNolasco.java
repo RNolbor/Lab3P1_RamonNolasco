@@ -16,8 +16,8 @@ public class Lab3P1_RamonNolasco {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner scanner = new Scanner(System.in);
-        
-        while (true){
+        boolean programa = true;
+        while (programa){
             
             System.out.println("--------------------MENU---------------------");
             System.out.println("1) Reloj de Arena");
@@ -33,12 +33,13 @@ public class Lab3P1_RamonNolasco {
             }
             
             switch (eleccion){
-                case 1:
+                
+                case 1: // EJERCICIO 1 ----------------------------------------------------------------------------------------------------------------------------------------
                     
                     
                     
                     
-                case 2:
+                case 2: // EJERCICIO 2 ----------------------------------------------------------------------------------------------------------------------------------------
                     
                     System.out.println("Ingrese el valor de n: ");
                     int n = scanner.nextInt();
@@ -50,48 +51,68 @@ public class Lab3P1_RamonNolasco {
                         r = scanner.nextInt();
                     }
                     long ncr;
-                    for (int i = n; i > (n - r)! ; i--){
+                    long nfactorial = n;
+                    long rfactorial = r;
+                    int n2 = n - 1;
+                    int r2 = r - 1;
+                    int nmenosr = n - r;
+                    long nmenosrfactorial = nmenosr;
+                    int nmr2 = nmenosr - 1;
+                    
+                    for (int i = n2 ; i > 0 ; i -= 1 ){
+                        nfactorial *= n2;
+                        n2 -= 1;
+                    }    
+                    for (int o = r2 ; o > 0 ; o -= 1){
+                        rfactorial *= r2;
+                        r2 -= 1;
+                    }   
+                    for (int p = nmr2 ; p > 0 ; p -= 1){
+                        nmenosrfactorial *= nmr2;
+                        nmr2 -= 1;
+                    }   
+                    
+                    if (nfactorial == 0){
+                        nfactorial = 1;
+                    }
+                    else if (rfactorial == 0){
+                        rfactorial = 1;
+                    }
+                    else if (nmenosrfactorial == 0){
+                        nmenosrfactorial = 1;
+                    }
+                    
+                    ncr = ( nfactorial / ( nmenosrfactorial * rfactorial ));                           
+                    System.out.println("Combinaciones posibles con n = " + n + " y r = " + r + " son: " + ncr);
+                    
+                    continue;
+                    
+                case 3: // EJERCICIO 3 ----------------------------------------------------------------------------------------------------------------------------------------
+                    
+                    System.out.println("Ingrese un limite: ");
+                    int medida = scanner.nextInt();
+                    
+                    while (medida % 2 == 0 || medida < 7){
+                        System.out.println("Ingrese un numero impar mayor o igual a 7");
+                        medida = scanner.nextInt();
+                    }
+                    
+                    for (int i = medida ; i > 0 ; i -= 1){
                         
                     }
-                    System.out.println("Combinaciones posibles con n = " + n + " y r = " + r + "son: " + ncr);
                     
+                
                     
-                case 3:
+                    continue;
                     
-                    
-                    
-                    
-                    
-                case 4:
-                    break;
-                    
+                case 4: // SALIR DEL PROGRAMA 
+                    programa = false;
+                            
                     
                     
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+ 
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
     }
     
