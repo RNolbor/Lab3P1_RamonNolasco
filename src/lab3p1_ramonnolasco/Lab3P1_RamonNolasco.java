@@ -36,8 +36,40 @@ public class Lab3P1_RamonNolasco {
                 
                 case 1: // EJERCICIO 1 ----------------------------------------------------------------------------------------------------------------------------------------
                     
-                    
-                    
+                    int tamaño;
+
+                    do {
+                        System.out.print("Ingrese un número impar mayor o igual a 7: ");
+                        tamaño = scanner.nextInt();
+                    } while (tamaño < 7 || tamaño % 2 == 0);
+
+                    for (int i = 0; i < tamaño / 2; i++) {
+                        for (int j = 0; j < tamaño; j++) {
+                            if (j < i || j >= tamaño - i) {
+                                System.out.print(" ");
+                            } else {
+                                System.out.print("*");
+                            }
+                        }
+                        System.out.println();
+                    }
+
+                    for (int i = 0; i < tamaño; i++) {
+                        System.out.print("*");
+                    }
+                    System.out.println();
+
+                    for (int i = tamaño / 2 - 1; i >= 0; i--) {
+                        for (int j = 0; j < tamaño; j++) {
+                            if (j < i || j >= tamaño - i) {
+                                System.out.print(" ");
+                            } else {
+                                System.out.print("*");
+                            }
+                        }
+                        System.out.println();
+                    }
+                    continue;
                     
                 case 2: // EJERCICIO 2 ----------------------------------------------------------------------------------------------------------------------------------------
                     
@@ -96,12 +128,47 @@ public class Lab3P1_RamonNolasco {
                         System.out.println("Ingrese un numero impar mayor o igual a 7");
                         medida = scanner.nextInt();
                     }
+                    String linea1 = " ";
+                    for (int i = medida - 1 ; i > 0 ; i -= 1){
+                        linea1 += "*";
+                    }
+                    System.out.println(linea1);
                     
-                    for (int i = medida ; i > 0 ; i -= 1){
-                        
+                    int x = 4;
+                    int masder = -1;
+                    int masizq = medida - x;
+                    
+                    
+                    String linea2 = "*";
+                    String nmasd = "";
+                    String nmasi = "";
+                    
+                    for (int k = masizq ; k > 0 ; k -= 1){
+                        nmasi += "+";
                     }
                     
-                
+                    for (int a = medida - 2 ; a > 0 ; a -= 1){
+                        
+                        for (int g = masder ; g > 0 ; g -= 1){
+                            nmasd += "+";
+                        }
+                        
+                        
+                        
+                        for (int k = masizq ; k > 0 ; k -= 1){
+                            nmasi += "+";
+                        }
+                        linea2 += "*" + nmasd + " " + "*" + nmasi;
+
+                        masizq -= 1;
+                        masder += 1;
+                        
+                            
+                            
+                            
+                        
+                        
+                    }
                     
                     continue;
                     
