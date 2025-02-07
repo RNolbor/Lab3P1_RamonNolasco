@@ -100,10 +100,65 @@ public class Lab3P1_RamonNolasco {
                                       
                     break;
                     
-                
+                case 3: 
+                    
+                    System.out.println("Ingrese la cantidad de filas de su trapecio: ");
+                    int filas = input.nextInt();
+                    
+                    while (filas < 5){
+                        System.out.println("Tamaño del trapecio tiene que ser mayor o igual a 5 ");
+                        System.out.println("Ingrese la cantidad de filas de su trapecio: ");
+                        filas = input.nextInt();
+                    }
+                    
+                    //PRIMERA FILA
+                    for (int i = 0; i < filas - 1; i++){
+                        System.out.print(" ");
+                    }
+                    for (int j = 0; j < filas; j++){
+                        System.out.print("*");
+                    }
+                    for (int k = 0; k < filas - 1; k++){
+                        System.out.print(" ");
+                    }       
+                    System.out.println("");
+                    
+                    //CUERPO DEL TRAPECIO
+                    int nEsp = 2;
+                    int nEspDentro = filas;
+                    for (int i = 0; i < filas - 2; i++){
+                        
+                        for (int j = 0; j < filas - nEsp; j++){
+                            System.out.print(" ");
+                        }
+                        System.out.print("*");
+                        for (int k = 0; k < nEspDentro; k++){
+                            System.out.print(" ");
+                        }
+                        System.out.print("*");
+                        for (int j = 0; j < filas - nEsp; j++){
+                            System.out.print(" ");
+                        }
+                        nEsp += 1;
+                        nEspDentro += 2;
+                        System.out.println("");
+                    }
+                    
+                    //ULTIMA FILA
+                    for (int i = 0; i < (filas * 3)-2 ; i++){
+                        System.out.print("*");
+                    } 
                     
                     
                     
+                    
+                    
+                    break;
+                    
+                case 4:
+                    menu = false;
+                    break;
+        
             }
             
             
